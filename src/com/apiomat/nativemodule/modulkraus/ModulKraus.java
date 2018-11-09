@@ -24,6 +24,8 @@
  */
 package com.apiomat.nativemodule.modulkraus;
 
+import com.apiomat.nativemodule.NativeModuleConfig.Type;
+
 
 /**
  * Generated class for starting and stopping your module. 
@@ -52,6 +54,15 @@ public class ModulKraus implements com.apiomat.nativemodule.IModule
     //     order = 1 )
     // public static String HOSTNAME = "ModulKraus_hostname";
     //
+    @com.apiomat.nativemodule.NativeModuleConfig(
+            datatype = Type.TEXT,
+            example = "Something",
+            title = "companyName",
+            info = "Enter your company",
+            defaultValue = "APIOMAT",
+            notifyAllNodes = true,
+            order = 1 )
+    public static String compName = "compName";
     // Read @NativeModuleConfig values using the following code:
     // ModulKraus.APP_CONFIG_PROXY.getConfigValue( ModulKraus.HOSTNAME, appName, system );
 
