@@ -25,7 +25,6 @@
 package com.apiomat.nativemodule.modulkraus;
 import com.apiomat.nativemodule.*;
 import com.apiomat.nativemodule.basics.User;
-
 import com.apiomat.nativemodule.modulkraus.*;
 
 /**
@@ -50,6 +49,8 @@ public class ReferentHooksNonTransient<T extends com.apiomat.nativemodule.modulk
     @Override
     public void beforePost( com.apiomat.nativemodule.modulkraus.Referent obj, com.apiomat.nativemodule.Request r )
     {
+    	String myCompany = (String)ModulKraus.APP_CONFIG_PROXY.getConfigValue( ModulKraus.compName, r.getApplicationName(), r.getSystem());
+    	obj.setCompanyName(myCompany);
     }
 
 
